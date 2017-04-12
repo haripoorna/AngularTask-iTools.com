@@ -11,16 +11,7 @@ angular.module('railJobsApp').constant('homePageConfig', {
         "About Us": {
             "isActive": false
         },
-        "Job seeker": {
-            "isActive": false
-        },
-        "Recruiter": {
-            "isActive": false
-        },
-        "Training": {
-            "isActive": false
-        },
-        "Consultancy": {
+        "services": {
             "isActive": false
         }
     }
