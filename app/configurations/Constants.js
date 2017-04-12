@@ -1,12 +1,10 @@
 'use strict';
 
-angular.module('railJobsApp').constant(
+angular.module('jobsApp').constant(
     'constants', {
         "signIn": "LOGIN",
         "signUp": "New User ?",
         "forgotPassword": "Forgot Password?",
         "loginText": "LOGIN",
-        "jobSeeker": "employer",
-        "recruiter": "college"
     }
 );

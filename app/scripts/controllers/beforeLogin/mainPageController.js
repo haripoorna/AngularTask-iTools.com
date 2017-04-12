@@ -11,7 +11,11 @@ angular.module('railJobsApp')
     .controller('mainPageController', ['$scope', 'formContact',
         function(scope, formContact) {
             scope.contactDetails = formContact.properties;
-            scope.signInButton = "Submit"
+            scope.signInButton = "Submit";
+            scope.requestObject = {
+                'user': null,
+                'info': {}
+            };
             scope.consultancy = [{
                 "img": "../../images/bitmap.png",
                 "title": "Project Planning Consultancy"
@@ -89,5 +93,20 @@ angular.module('railJobsApp')
                 'content': 'Minimum experience of 1 year of railway field or certifcation from railway training,Institution is prequistite for Registration,Minimum experience of 1 year of railway field or certifcation from railway training,Institution is prequistite for Registration',
                 'button': 'Register'
             }];
+            scope.send = function(isDisabled) {
+                if (!isDisabled) {
+                    scope.requestObject.user = scope.selectedRole.toLowerCase();
+                    angular.forEach(scope.contactDetails, function(formObject, formKey) {
+                        angular.forEach(formObject.formInfo, function(formInfoObject, formInfoKey) {
+                            scope.requestObject.info[formInfoKey] = formInfoObject.formModel;
+                        });
+                    });
+                    requestService.invokeService(requestAndResponse.contactRequest, 'POST', null, scope.requestObject).then(function(response) {
+                        if (response.data) {
+                            console.log('success');
+                        }
+                    });
+                }
+            };
         }
     ]);

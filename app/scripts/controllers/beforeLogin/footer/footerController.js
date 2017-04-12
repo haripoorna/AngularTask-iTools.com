@@ -11,7 +11,7 @@ angular.module('railJobsApp')
     .controller('footerController', ['$scope', '$state',
         function(scope, $state) {
             scope.footerObject = [{
-                "copyright": "Copyright © 2017 All rights reserved by LNR Rail Engg. (P) Ltd."
+                "copyright": "Copyright © 2017 All rights reserved by dummy.com (P) Ltd."
             }, {
                 "footerQuicklinks": {
                     "privacypolicy": "Privacy Policy",
