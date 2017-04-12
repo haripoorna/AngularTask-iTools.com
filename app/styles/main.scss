@@ -1,0 +1,18 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
+@import 'colors';
+@import 'navbar';
+@import 'home';
+@import 'signIn';
+@import 'footer';
+@import 'jobSeekerSignUp';
+
+
+
+//common
+*:focus {
+    outline: none;
+    border: 0;
+}

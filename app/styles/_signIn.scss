@@ -1,0 +1,121 @@
+    .tabsdemoDynamicHeight md-content {
+        background-color: #fff !important;
+        margin: auto;
+        h1 {
+            text-align: center;
+            padding: 30px 0px 30px 0px;
+            color: #584C45;
+        }
+    }
+    
+    .tabsdemoDynamicHeight md-content md-tabs {
+        background: #f6f6f6;
+        font-size: 20px !important;
+        color: #463b35;
+    }
+    
+    .tabsdemoDynamicHeight md-content md-tabs md-tabs-wrapper {
+        background: white;
+        background-color: #fff;
+        height: 70px;
+    }
+    
+    md-tabs[md-border-bottom] md-tabs-wrapper {
+        border-style: none !important;
+    }
+    
+    .tabsdemoDynamicHeight md-content h1:first-child {
+        margin-top: 0;
+    }
+    
+    .signIn-body {
+        background-image: url('../images/carouselrail.png');
+        background-repeat: none;
+        height: 89.4vh;
+        .tabs-section {
+            height: 500px !important;
+            width: 400px !important;
+            margin: auto !important;
+            padding-top: 60px;
+            tabsdemoDynamicHeight {
+                md-tabs {
+                    md-tabs-wrapper {
+                        md-tabs-canvas {
+                            md-pagination-wrapper {}
+                        }
+                    }
+                }
+            }
+        }
+        md-ink-bar {
+            height: 3px;
+        }
+        md-tab {
+            font-size: 30px;
+        }
+        .registration-form-validator {
+            .form-field-container {
+                width: 300px;
+                margin: auto;
+                .control-label {
+                    font-size: 20px;
+                }
+                .material-input-container input[type='text'],
+                input[type='password'] {
+                    width: 300px !important;
+                    border-bottom: 2px solid lightgrey;
+                    margin: auto;
+                }
+            }
+        }
+        .button-container {
+            cursor: pointer;
+            width: 90px;
+            height: 45px;
+            background-color: #c89d67;
+            clear: both;
+            margin-top: 30px;
+            border: none;
+            .text-binder {
+                font-size: 14px;
+                font-weight: normal;
+                font-style: normal;
+                font-stretch: normal;
+                color: $white;
+                text-align: center;
+                letter-spacing: normal;
+                padding: 12px 2px;
+            }
+            .text-binder:focus {
+                outline: none;
+                color: #c89d67;
+            }
+        }
+        .forgot-password {
+            cursor: pointer;
+            color: #c89d67;
+            font-size: 16px;
+            color: #c89d67;
+        }
+        .newUser {
+            a {
+                color: #c89d67;
+            }
+            a:focus {
+                outline: none;
+            }
+            cursor: pointer;
+            color: #c89d67;
+            font-size: 16px;
+        }
+        .form-control:focus {
+            border-color: none !important;
+            outline: 0;
+            box-shadow: none !important;
+        }
+        .form-control {
+            border-color: none !important;
+            outline: 0;
+            box-shadow: none !important;
+        }
+    }

@@ -1,0 +1,43 @@
+.navbar-default {
+    margin-bottom: 0px !important;
+    background-color: $theme;
+    height: 80px;
+    .navbar-brand {
+        margin-top: -10px;
+        margin-left: 0px !important;
+        .railjobs-logo {
+            width: 100px;
+            height: 72px;
+            object-fit: contain;
+            margin-left: 60px;
+        }
+    }
+    .navbar-nav {
+        .signIn {
+            background-color: $lightBrown;
+            border-bottom: solid 6px $lightBrown;
+            height: 77px;
+        }
+        li >a:hover {
+            color: $white;
+        }
+        li >a {
+            color: $white;
+            font-family: AvenirNext;
+            font-size: 22px;
+            height: 72px;
+            top: 12px;
+            text-align: center;
+        }
+    }
+    .active-tab {
+        border-bottom: solid 6px $lightBrown;
+        color: $white;
+    }
+}
+
+@media (min-width: 768px) {
+    .navbar-right {
+        margin-right: 15px;
+    }
+}

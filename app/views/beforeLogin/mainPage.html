@@ -1,0 +1,213 @@
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+    <!-- Overlay -->
+    <div class="overlay"></div>
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#bs-carousel" data-slide-to="1"></li>
+        <li data-target="#bs-carousel" data-slide-to="2"></li>
+        <li data-target="#bs-carousel" data-slide-to="3"></li>
+        <li data-target="#bs-carousel" data-slide-to="4"></li>
+        <li data-target="#bs-carousel" data-slide-to="5"></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item slides active">
+            <div class="slide-1"></div>
+            <div class="rail-job-info">
+                <img src="../../images/railjobs-logo.png">
+                <h2>Rail Jobs Info</h2>
+                <h3>Railway Professional Network</h3>
+                <p>We help you to find a Job, to find a candiate, to find domestic and International new rail projects and tenders</p>
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="slide-2"></div>
+            <div class="hero">
+                <hgroup>
+                    <h1>We are smart</h1>
+                    <h3>Get start your next awesome project</h3>
+                </hgroup>
+                <button class="btn btn-hero btn-lg" role="button">See all features</button>
+            </div>
+        </div>
+        <div class="item slides">
+            <div class="slide-3"></div>
+            <div class="hero">
+                <hgroup>
+                    <h1>We are amazing</h1>
+                    <h3>Get start your next awesome project</h3>
+                </hgroup>
+                <button class="btn btn-hero btn-lg" role="button">See all features</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <div id="exTab1" class="text-center">
+        <div class="ul-content">
+            <ul class="nav nav-pills nav-justified">
+                <li class="active">
+                    <a href="#1a" data-toggle="tab">Departments in Railway</a>
+                </li>
+                <li>
+                    <a href="#2a" data-toggle="tab">Railway Jobs in India</a>
+                </li>
+                <li>
+                    <a href="#3a" data-toggle="tab">International Rail Jobs</a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content clearfix">
+            <div class="tab-pane active" id="1a">
+                <div data-ng-include="'views/beforeLogin/tabs/tabs1.html'"></div>
+            </div>
+            <div class="tab-pane" id="2a">
+                <div data-ng-include="'views/beforeLogin/tabs/tabs1.html'"></div>
+            </div>
+            <div class="tab-pane" id="3a">
+                <div data-ng-include="'views/beforeLogin/tabs/tabs1.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="jumbotron about-rail ">
+    <h2 class="text-center">About Rail Jobs</h2>
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-5 text-left about-rail-job-content" data-ng-repeat="data in aboutRailJobs">
+                <h3>{{data.heading}}</h3>
+                <p>{{data.description}}</p>
+                <div class="button-container text-center">
+                    <div class="text-binder" data-ng-click="readMore()">{{data.buttonText}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <h2 class="text-center">We help Consultancies in</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 portfolio-item" data-ng-repeat="data in consultancy">
+                <div class="tiles img-responsive" style="background-image: url({{data.img}})">
+                    <div class="tile-heading">
+                        <a href="#">{{data.title}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contactform-section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>For information on employment, recruitment,</br> consultancy, training, general enquiry write to to us</p>
+                <div class="row">
+                    <div class="col-md-12 employment-Recruitment">
+                        <table>
+                            <tr data-ng-repeat="data in services">
+                                <td>{{data.service}}</td>
+                                <td><a href="{{data.hyperlink}}">{{data.domain}}</a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <ul class="socialIcons">
+                    <li><a class="linkedin" href="#"><span class="fa fa-linkedin" aria-hidden="true"></span></a></li>
+                    <li><a class="facebook" href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+                    <li><a class="twitter" href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <p>If you would like Rail Jobs Info to contact you, please fill out the form.</p>
+                <form name="formValidator" class="registration-form-validator" novalidate="novalidate" autocomplete="off" data-ng-repeat="(formCategory, formData) in contactDetails">
+                    <div class="form-group form-validator-group" data-ng-repeat="(formKey,formField) in formData.formInfo" float-label field-model="formField.formModel">
+                        <div class="form-field-container">
+                            <md-input-container class="material-input-container no-padding {{formField.css}}">
+                                <label class="control-label " data-ng-bind="formField.title"></label>
+                                <input type="{{formField.type}}" data-ng-model="formField.formModel" name="name{{$index}}" class="form-control" data-ng-required="formField.required" data-ng-pattern="formField.pattern" ng-maxlength="formField.maxLength">
+                                <div ng-messages="formValidator['name' + $index].$error" ng-if="formValidator['name' + $index].$touched" role="alert">
+                                    <div class="error" ng-message="required" data-ng-bind="formField.validationMessage"></div>
+                                    <div class="error" ng-message="pattern" data-ng-bind="formField.patternValidation"></div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="text-center" data-ng-if="$last">
+                        <div class="button-container" data-ng-class="{'inactive-button-container':!formValidator.$valid}">
+                            <div class="text-binder disabled" data-ng-bind="signInButton" data-ng-click="register(!formValidator.$valid)"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="section quick-links">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>RAILYWAY DEPARTMENTS</h4>
+                <ul>
+                    <li><a href="#">Accounts Department</a></li>
+                    <li><a href="#">Civil Engineering (Engg)</a></li>
+                    <li><a href="#">Commercial / Marketing</a></li>
+                    <li><a href="#">Electrical Engineering</a></li>
+                    <li><a href="#">Mechanical Engineering</a></li>
+                    <li><a href="#">Medical & Health</a></li>
+                    <li><a href="#">Operating / Traffic</a></li>
+                    <li><a href="#">Personnel / HR</a></li>
+                    <li><a href="#">Public Relations</a></li>
+                    <li><a href="#">Signal & Telecommunications</a></li>
+                    <li><a href="#">Security</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>RAILWAY JOBS IN INDIA</h4>
+                <ul>
+                    <li><a href="#">Civil Engineering Departments</a></li>
+                    <li><a href="#">Signal & Telecom Department</a></li>
+                    <li><a href="#">Commercial / Marketing</a></li>
+                    <li><a href="#">Private Railway Sidings</a></li>
+                    <li><a href="#">Rail Infra Companies</a></li>
+                    <li><a href="#">Electrical Engineering</a></li>
+                </ul>
+                <br>
+                <h4>INTERNATIONAL JOBS</h4>
+                <ul>
+                    <li><a href="#">Rail Jobs in Us</a></li>
+                    <li><a href="#">Rail jobs in Canada </a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>TRAINING</h4>
+                <ul>
+                    <li>
+                        <a href="#">Training Facilities for Private</a>
+                    </li>
+                    <li>
+                        <a href="#">Railway Employees</a>
+                    </li>
+                    <li>
+                        <a href="#">Indian Railway Training Institutes</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>CONSULTANCY</h4>
+                <ul>
+                    <li><a href="#"> Project Planning Consultancy</a></li>
+                    <li><a href="#"> Pre Bid Consultancy</a></li>
+                    <li><a href="#"> Project Management Consultancy</a></li>
+                    <li><a href="#">Procurement Assitance</a></li>
+                    <li><a href="#"> Liasion</a></li>
+                    <li><a href="#"> Solutions</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

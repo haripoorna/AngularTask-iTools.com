@@ -1,0 +1,14 @@
+<div class="footer" data-ng-controller="footerController">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" data-ng-repeat="data in footerObject">
+                <div>{{data.copyright}}</div>
+                <ul class="pull-right">
+                    <li data-ng-repeat="item in data.footerQuicklinks">
+                        <a href="#">{{item}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

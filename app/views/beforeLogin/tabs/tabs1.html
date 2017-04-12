@@ -1,0 +1,47 @@
+<div class="container section-padding">
+    <div class="row register-header">
+        <div class="col-xs-12 col-sm-12">
+            <h2>Register Now</h2>
+            <p>We help you to find a job,to find a candiate,
+                <br> to find Domestic & international New Rail Projects & Tenders</p>
+        </div>
+    </div>
+    <div class="row register-content">
+        <div class="col-md-6">
+            <div class="row ">
+                <div class="col-md-6 " data-ng-repeat="columns in userTypes">
+                    <div class="register-sub-content butnstyle">
+                        <h3>{{columns.header}}</h3>
+                        <p class="">{{columns.content}}</p>
+                    </div>
+                    <div class="row ">
+                        <div class="button-container ">
+                            <div class="text-binder" data-ng-click="register()">{{columns.button}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6" data-ng-repeat="columns in adminCategories">
+                    <h3>{{columns.header}}</h3>
+                    <div class="row btnstyle">
+                        <div class="col-md-12">
+                            <ul>
+                                <li data-ng-repeat="(key, value) in columns.listItems">
+                                    <p><span class="fa fa-arrow-right" aria-hidden="true"></span>{{value}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="button-container ">
+                            <div class="text-binder" data-ng-click="knowMore()">{{columns.button}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
